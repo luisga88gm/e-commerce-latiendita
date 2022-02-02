@@ -1,10 +1,11 @@
 import { Container, Nav, Navbar as BTNavbar, NavDropdown} from "react-bootstrap";
+import CartIcon from "../../icon/CartIcon";
 
 const NavBar = () => {
   return (
 <BTNavbar bg="light" expand="lg">
   <Container>
-    <BTNavbar.Brand href="#home">La Tiendita E-Commerceq</BTNavbar.Brand>
+    <BTNavbar.Brand href="#home">La Tiendita E-Commerce</BTNavbar.Brand>
     <BTNavbar.Toggle aria-controls="basic-navbar-nav" />
     <BTNavbar.Collapse id="basic-navbar-nav">
       <Nav className="me-auto">
@@ -19,6 +20,7 @@ const NavBar = () => {
         </NavDropdown>
       </Nav>
     </BTNavbar.Collapse>
+    <CartIcon />
   </Container>
 </BTNavbar>
   );
