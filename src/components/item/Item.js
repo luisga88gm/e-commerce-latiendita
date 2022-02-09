@@ -1,15 +1,23 @@
+import { useState } from "react";
 import ItemCounter from "../item-counter/ItemCounter";
 
-const item = ({name, price, id, setSelectedItem}) => {
-    const selectItem = () => setSelectedItem({name, price, id});
+const Item = ({ id, name, description, stock, setSelectedItem }) => {
+  const [sotckSelected, setSotckSelected] = useState(0);
 
-  return <div>
-      <h2>Nombre del Producto: {name}</h2>
-      <h2>Precio del Producto: {price}</h2>
-      <button onClick={selectItem}>Seleccionar producto</button>
-      <hr/>
-      <ItemCounter stock={10} />
-  </div>;
+  const selectItem = () =>
+    setSelectedItem({ id, name, description, stock: sotckSelected });
+
+  return (
+    <>
+      <div>
+        <h2>Nombre del producto: {name}</h2>
+        <h2>Descripción del producto: {description}</h2>
+        <ItemCounter stock={stock} setSotckSelected={setSotckSelected} />
+        <button onClick={selectItem}>Seleccionar producto</button>
+      </div>
+      <hr />
+    </>
+  );
 };
 
-export default item;
+export default Item;
