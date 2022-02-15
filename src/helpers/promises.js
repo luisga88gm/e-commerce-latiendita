@@ -1,5 +1,4 @@
-
-import { products } from "../data/products";
+import { products, product } from "../data/products";
 
 export const task = new Promise((resolve, reject) => {
   resolve(true);
@@ -12,3 +11,5 @@ export const productsAPI = new Promise((resolve, reject) => {
     resolve(products);
   }, 2000);
 });
+
+// productApi ... return product
