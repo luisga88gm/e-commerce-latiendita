@@ -1,34 +1,33 @@
-import React, { Component } from 'react';
+import { Component, Fragment } from "react";
 
 export class ClassComponent extends Component {
   constructor() {
-    super()
+    super();
     this.state = {
-      name: "Juan",
-      surname: "Pérez",
-
-    }
+      name: "Luis",
+      surname: "García",
+    };
   }
 
   updateName = () => {
-    this.setState({name: "Luis Gabriel", surname: "García Mingall"});
-  }
+    this.setState({ name: "Gabriel" });
+  };
 
-  render () {
-      const { name, age } = this.props;
+  render() {
+    const { name, age } = this.props;
 
-      return (
-        <>
+    return (
+      <Fragment>
         <h1>ClassComponent</h1>
         <div onClick={this.updateName}>
-          <h2>Nombre del Estado: {this.state.name}</h2>
+          <h2>Nombre del estado: {this.state.name}</h2>
         </div>
-        <div onClick={this.updateName}>
-          <h2>Nombre del Estado: {this.state.surname}</h2>
+        <div>
+          <h2>Nombre del estado: {this.state.surname}</h2>
         </div>
         <h2>Nombre: {name}</h2>
         <h2>Edad: {age}</h2>
-        </>
-      );
+      </Fragment>
+    );
   }
 }

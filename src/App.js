@@ -1,14 +1,17 @@
+import { useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import ItemListContainer from "./components/item-list-container/ItemListContainer";
-import NavBar from "./components/navbar/NavBar";
+import ResizeComponent from "./components/resize-component/ResizeComponent";
+import Routes from "./routes/Routes";
+import { CartProvider } from "./context/CartContext";
 
 function App() {
   return (
     <div className="App">
-      <NavBar />
-      {/* <ItemListContainer /> */}
-      <h1>Otro componente</h1>
+      <CartProvider>
+        <Routes />
+      </CartProvider>
+      {/* <ResizeComponent /> */}
     </div>
   );
 }
