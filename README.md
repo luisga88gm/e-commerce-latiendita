@@ -1,3 +1,13 @@
+PROYECTO E-COMMERCE "LA TIENDITA"
+
+Una API Rest creada en base a la tecnología ReactJS en CODERHOUSE.
+
+2022/>
+
+Profesor: Leo Omaña
+Tutor: Rodrigo Collins
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

@@ -1,28 +1,80 @@
-import { Container, Nav, Navbar as BTNavbar, NavDropdown} from "react-bootstrap";
+import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { Link, NavLink } from "react-router-dom";
 import CartIcon from "../../icon/CartIcon";
+import "./NavBar.css";
 
 const NavBar = () => {
+  const activeStyle = {
+    color: "red",
+  };
+
   return (
-<BTNavbar bg="light" expand="lg">
-  <Container>
-    <BTNavbar.Brand href="#home">La Tiendita E-Commerce</BTNavbar.Brand>
-    <BTNavbar.Toggle aria-controls="basic-navbar-nav" />
-    <BTNavbar.Collapse id="basic-navbar-nav">
-      <Nav className="me-auto">
-        <Nav.Link href="#home">Home</Nav.Link>
-        <Nav.Link href="#link">Link</Nav.Link>
-        <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-          <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-          <NavDropdown.Divider />
-          <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-        </NavDropdown>
-      </Nav>
-    </BTNavbar.Collapse>
-    <CartIcon />
-  </Container>
-</BTNavbar>
+    <Navbar bg="light" expand="lg">
+      <Container>
+        <Navbar.Brand>
+          <Link to="/">La Tiendita // E-Commerce</Link>
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <NavDropdown title="Categorias" id="basic-nav-dropdown">
+              <NavDropdown.Item>
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? "activeClass" : undefined
+                  }
+                  to="category/lacteos"
+                >
+                  Lácteos
+                </NavLink>
+              </NavDropdown.Item>
+              <NavDropdown.Item>
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? "activeClass" : undefined
+                  }
+                  to="category/pastas"
+                >
+                  Pastas
+                </NavLink>
+              </NavDropdown.Item>
+              <NavDropdown.Item>
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? "activeClass" : undefined
+                  }
+                  to="category/galletitas"
+                >
+                  Galletitas
+                </NavLink>
+              </NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item>
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? "activeClass" : undefined
+                  }
+                  to="category/arroz"
+                >
+                  Arroz
+                </NavLink>
+              </NavDropdown.Item>
+              <NavDropdown.Item>
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? "activeClass" : undefined
+                  }
+                  to="category/jugos"
+                >
+                  Jugos
+                </NavLink>
+              </NavDropdown.Item>
+            </NavDropdown>
+          </Nav>
+        </Navbar.Collapse>
+        <CartIcon />
+      </Container>
+    </Navbar>
   );
 };
 

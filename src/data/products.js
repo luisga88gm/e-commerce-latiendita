@@ -5,6 +5,7 @@ export const products = [
     description: "Leche en TetraPak por 1lts entera",
     price: "$ 80,50",
     stock: 10,
+    category: "lacteos",
   },
   {
     id: "2",
@@ -14,6 +15,7 @@ export const products = [
     description: "Paquete de tallarines al huevo por 500grs",
     price: "$ 99,29",
     stock: 20,
+    category: "pastas",
   },
   {
     id: "3",
@@ -23,6 +25,7 @@ export const products = [
     description: "Galletitas dulces surtidas, paquete por 400grs",
     price: "$ 34,56",
     stock: 40,
+    category: "galletitas",
   },
   {
     id: "4",
@@ -32,6 +35,7 @@ export const products = [
     description: "Arroz parboil, paquete por 1kg",
     price: "$ 60,99",
     stock: 15,
+    category: "arroz",
   },
   {
     id: "5",
@@ -41,5 +45,6 @@ export const products = [
     description: "Jugo natural de naranja concentrado por 1500ml",
     price: "$ 120,55",
     stock: 15,
+    category: "jugos",
   },
 ];
