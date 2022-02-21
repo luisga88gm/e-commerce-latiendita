@@ -40,14 +40,13 @@ const ItemDetailContainer = () => {
       <p>{selectedItem && selectedItem.name}</p>
       <p>{selectedItem && selectedItem.description}</p>
       <p>ID: {selectedItem && selectedItem.id}</p>
-      <p>Precio: {selectedItem && selectedItem.price}</p>
       <p>STOCK seleccionado: {selectedItem && selectedItem.stock}</p>
       <ItemCounter
         stock={selectedItem?.stock || 10}
         setSotckSelected={setQuantity}
       />
       <input onChange={handleUserName} value={userName} />
-      <button onClick={handleAddToCart}>Agregar a mi carrito</button>
+      <button onClick={handleAddToCart}>Agregar al carrito</button>
     </div>
   );
 };
