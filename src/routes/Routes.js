@@ -1,24 +1,55 @@
-import React from "react";
-import { BrowserRouter, Route, Routes as Switch } from "react-router-dom";
-import Cart from "../components/cart/Cart";
-import ItemDetailContainer from "../components/item-detail-container/ItemDetailContainer";
-import ItemListContainer from "../components/item-list-container/ItemListContainer";
-import NavBar from "../components/navbar/NavBar";
-import NotFound from "../components/not-found/NotFound";
+import { React, useContext,useEffect} from 'react'
+import { BrowserRouter,Route,Routes as Switch} from 'react-router-dom';
+import ItemDetailsContainer from '../view/ItemDetails/ItemDetailsContainer';
+import ItemListContainer from '../view/ItemList/ItemListContainer';
+import Header from '../layout/header/Header';
+import Footer from '../layout/footer/Footer';
+import ShoppingContainer from '../view/shopping/ShoppingContainer';
+import ItemCheckout from '../view/ItemCheckout/ItemCheckout';
+import { CartContext } from '../context/CartContext';
 
-const Routes = () => {
+export default function Routes() {
+    const {getItems} = useContext(CartContext);
+    useEffect(() => {
+        getItems();
+    }, []);
+    
   return (
-    <BrowserRouter>
-      <NavBar />
-      <Switch>
-        <Route path="/" element={<ItemListContainer />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/category/:id" element={<ItemListContainer />} />
-        <Route path="/item/:id" element={<ItemDetailContainer />} />
-        <Route path="*" element={<NotFound />} />
-      </Switch>
-    </BrowserRouter>
-  );
-};
 
-export default Routes;
+        <BrowserRouter>
+            <Header/>
+            <Switch>
+            
+                <Route path='/' element = {
+              
+                    <ItemListContainer/>
+                }/>
+                <Route path='/home' element = {
+                    <ItemListContainer/>
+                }/>
+                    {/* Navbar*/}
+{/*                 <Route path='/offers' element = {<p></p>}/>
+                <Route path='/help' element = {<p></p>}/> */}
+                <Route path='/contact' element = {<p></p>}/>
+                    {/* Categories */}
+
+                <Route path='/category/:category' element = {                    
+                    <ItemListContainer/>}
+                />
+                    {/* Item id */}
+
+                <Route path='/item/:id' element={
+                    <ItemDetailsContainer/>}
+                /> 
+                
+                    {/* Navbar users */}
+                <Route path='/cart' element = {<ShoppingContainer/>}/>
+                <Route path='/checkout' element = {<ItemCheckout/>}/>
+
+                <Route path='*' element={<h2>Not found</h2>}/>
+            </Switch>
+            <Footer/>
+        </BrowserRouter>
+
+  );
+}

@@ -1,0 +1,18 @@
+*{
+  margin: 0;
+  padding: 0;
+  }
+  body,footer{
+    background-color: rgb(209, 232, 253);
+    font-family:"Proxima Nova","Helvetica Neue",Helvetica,Roboto,Arial,sans-serif,sans-serif
+  }
+  
+  header{
+    background-color: #fff159; 
+    padding: .5em;
+  }
+  
+  a{
+    text-decoration: none;
+    color: black;
+  }

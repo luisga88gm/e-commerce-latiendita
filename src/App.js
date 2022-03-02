@@ -1,19 +1,13 @@
-import { useEffect } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./App.css";
-import ResizeComponent from "./components/resize-component/ResizeComponent";
-import Routes from "./routes/Routes";
-import { CartProvider } from "./context/CartContext";
+import './styles/App.css';
+import Routes from './routes/Routes';
+import { CartProvider } from './context/CartContext';
 
-function App() {
+
+export default function App() {
+  
   return (
-    <div className="App">
-      <CartProvider>
-        <Routes />
-      </CartProvider>
-      {/* <ResizeComponent /> */}
-    </div>
+    <CartProvider>
+    <Routes/>
+    </CartProvider>
   );
 }
-
-export default App;

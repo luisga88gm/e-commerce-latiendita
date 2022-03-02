@@ -1,0 +1,254 @@
+/*Conteiner Header FIRST*/
+.conteiner__header__first{
+    display: flex;
+}
+.title__header{
+    flex: 1 1 auto;
+    align-self: center;
+}
+
+.search{
+    flex: 1 1 auto;
+    align-self: center;
+    text-align: center;
+    
+    
+}
+.search input{   
+   padding: .7em;
+   width: 65%;
+   border: none;
+   box-shadow: 0 1px 2px 0 rgb(0 0 0 / 20%);
+   
+}
+
+.search input:focus{
+    outline: none;
+}
+.button__search{
+    width: 4em;
+    height: 2.5em;
+    background-color: white;
+    border: none;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 20%);
+}
+
+.user__account{
+    flex: 1 1 auto;
+    align-self: center;
+}
+
+.user__account ul{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    
+}
+.user__account ul li{
+    padding: .5em 1em;
+    
+}
+
+.user__account:hover,.title__header:hover,.button__search:hover{
+    cursor: pointer;
+}
+
+/*Conteiner Header SECOND*/
+.conteiner__header__second{
+    display: flex;
+}
+.item__1{
+    flex: 1 1 auto;
+    align-self: center;
+}
+
+.user__item{
+    flex: 1 1 auto;
+    align-self: center;
+}
+
+
+.icon{
+    padding-right: .5em;
+}
+.nav__menu{
+    flex: 1 1 auto;
+    align-self: center;
+   
+}
+
+.nav__menu ul{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.nav__menu ul li{
+    padding: .5em .5em .5em .5em;
+
+    margin: 0.5em;
+}
+
+.navbar__item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav__menu ul li ul{
+    position: absolute;
+    background-color: #fff159;
+    flex-direction: column;
+    opacity: 1;
+    top: 0em;
+    transition: opacity .5s;
+    transition: top .5s;
+}
+.nav__menu ul li ul li{
+    border-bottom: 1px solid black;
+}
+
+.nav__menu ul li:hover,.nav__user li a:hover{
+    cursor: pointer;
+}
+
+/*NAVBAR USER*/
+.nav__user{
+    display: flex;
+    list-style: none;
+}
+.nav__user li{
+    padding: 0em .6em;
+}
+
+.nav__user li a{
+    background-color: #fff159;
+    color: #fff;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0);
+    border-radius: 50%;
+    padding: .3em .4em .3em .4em; 
+}
+.icon_user{
+    color: black;
+}
+.user__favorites,.user__shopping{
+    background-color: rgb(250, 45, 45);
+    margin: 0.2em;
+    padding: 0em .5em 0em 0.5em; 
+    border-radius: 50%;
+    font-size: .8em;
+    font-weight: bold;
+    position: absolute;
+    top: 3.5em;
+}
+.user__favorites{
+    right:1;
+}
+
+.user__shopping{
+    right:1;
+}
+
+/*NAVBAR CATEGORIES*/
+.fade{
+    opacity: 0;
+    z-index: 1;
+    background-color: aquamarine;
+}
+
+.navbar__categories_background{
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.navbar__categories_background,.navbar__categories{
+    height: 100%;
+    z-index: 1; 
+
+}
+
+.navbar__categories_background{
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.521);
+ 
+
+}
+
+.navbar__categories{
+    background-color: #fff159;
+    position: fixed;
+    width: 20%;
+}
+.title__navbar__categories{
+   text-align: center;
+
+}
+.navbar__categories ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10%;
+    
+}
+.navbar__categories ul li{
+    font-weight: bold;
+    padding: 5% 5% 5% 5%;
+    width: 90%;
+    text-align: center;
+    border-bottom: 1px solid;
+}
+.button__categories{
+    display: flex;
+    justify-content: flex-end;
+}
+.button__categories button{
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    padding: 5% 5%;
+    font-size: 25px;
+}
+.navbar__categories ul li:hover{
+    background-color: #eaeded;
+    cursor: pointer;
+}
+
+@media only screen and (max-width:900px){
+    
+    .nav__menu,.item__1,.title__header{
+        display: none;
+    }
+    .conteiner__header__first{
+        flex-direction: column;
+    }
+    .nav__user{
+        position: absolute;
+        top: 3%;
+        right: 0;
+    }
+    .user__item ul li:nth-child(2){
+        display: none;
+    }
+    .user__favorites,.user__shopping{
+        top: -60%;
+    }
+    .user__favorites{
+        right:0;
+        display: none;
+    }
+    
+    .user__shopping{
+        right:0;
+    }
+}
+@media only screen and (max-width:350px){
+    .search input{
+        width: 60%;
+    }
+    .button__search{
+        width:10%;
+    }
+}
+

@@ -1,0 +1,117 @@
+.container__product{
+    margin: 2em;
+    display: flex;
+    flex-direction: row;
+    column-gap: 1em;
+}
+.container__form{
+    flex: 1 1 auto;
+    display: flex;
+    background-color: #fff;
+    border-radius: 10px;
+    justify-content: center;
+    border: 1px solid black;
+}
+.container__form form{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1em;
+
+}
+.form__group{
+    margin: 0.4em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.form__group input{
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px 15px;
+    outline: none;
+
+}
+.form__group input:focus{
+    border: 2px solid #186ff1;
+}
+.form__group button{
+    width: 100px;
+    border:none;
+    padding: 10px 15px;
+    background-color: #fff159;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+.container__item{
+    flex: 1 1 40%;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 10px;
+    row-gap: 1em;
+}
+.item__header{
+    text-align: center;
+}
+.items__list__container{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1em;
+    margin: .5em;
+}
+
+.item__list{
+    display: flex;
+    column-gap: 1em;
+    align-items: center;
+
+}
+.item__list__img{
+    width: 100px;
+    text-align: center;
+}
+.item__list__img img{
+    height: 60px;
+}
+.item__list__total{
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.order__container{
+    background-color: #fff;
+    height: 40vh;
+    margin: 5em;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 1em;
+}
+.order__id p{
+    font-size: 16px;
+}
+.order__id span{
+    background-color: #fff159;
+    padding: 5px;
+    font-weight: bold;
+}
+
+.order__button a{
+    display: block;
+    padding: 10px 15px;
+    background-color: #fff159;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.card__error{
+    text-align: center;
+    background-color: rgba(252, 0, 0, 0.493);
+    padding: 5px;
+    margin: 5px;
+    font-weight: bold;
+}
