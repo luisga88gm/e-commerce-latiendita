@@ -44,13 +44,14 @@ export default function ItemCheckout() {
       
       const user = {name:buyer.name,email:buyer.email,phone:buyer.phone}
       const order = {
-        user, items: [...items],date
+        user, items: [...items],date,total
       }
 
       // eslint-disable-next-line react-hooks/rules-of-hooks
       setOrderId(await useFormCheckout(order));
       finishedBuy();
       setLoading(false); 
+      console.log(order);
     }else{
       setValidateForm(false);
     }
@@ -68,13 +69,13 @@ export default function ItemCheckout() {
       {orderId && (
         <div className={Styles.order__container}>
           <div className={Styles.order__header}>
-            <h2>Thanks for your purchase!</h2>
+            <h2>GRACIAS POR SU COMPRA!</h2>
           </div>
           <div className={Styles.order__id}>
-            <p>Order ID: <span>{orderId}</span></p>
+            <p>Su Nro de Orden es: <span>{orderId}</span></p>
           </div>
           <div className={Styles.order__button}>
-            <Link to={'/home'}>Home</Link>
+            <Link to={'/home'}>VOLVER</Link>
           </div>
         </div>
       )}
@@ -83,28 +84,28 @@ export default function ItemCheckout() {
           <div className={Styles.container__form}>
             <form onSubmit={useFormSubmit}>
               <div className={Styles.form__group}>
-                <label>Name</label>
-                <input type="text" name="name" id="" placeholder='Name' onChange={validateString} required/>
+                <label>Nombre y Apellido</label>
+                <input type="text" name="name" id="" placeholder='José Pérez' onChange={validateString} required/>
               </div>
               <div className={Styles.form__group}>
                 <label>Email</label>
-                <input type="email" name="email" id="" placeholder='Email' onChange={validateString} required/>
+                <input type="email" name="email" id="" placeholder='example@domain.com' onChange={validateString} required/>
               </div>
               <div className={Styles.form__group}>
-                <label>Repeat Email</label>
-                <input type="email" name="repeat_email" id="" placeholder='Repeat email' onChange={validateString} required/>
+                <label>Repetir Email</label>
+                <input type="email" name="repeat_email" id="" placeholder='example@domain.com' onChange={validateString} required/>
               </div>
               <div className={Styles.form__group}>
-                <label>Phone</label>
-                <input type="number" name="phone" id="" placeholder='Phone' onChange={validateString} required/>
+                <label>Teléfono</label>
+                <input type="number" name="phone" id="" placeholder='1112345678' onChange={validateString} required/>
               </div>
               <div className={Styles.form__group}>
-                <button type='submit'>Buy</button>
+                <button type='submit'>Confirmar</button>
               </div>
               {!validateForm &&(
 
                 <div className={Styles.card__error}>
-                  Email does not match
+                  Email no coincide!
                 </div>
               )}
 
@@ -113,7 +114,7 @@ export default function ItemCheckout() {
           </div>
           <div className={Styles.container__item}>
             <div className={Styles.item__header}>
-              <h2>Products</h2>
+              <h2>Productos</h2>
             </div>
             {items && (
               <>
@@ -150,12 +151,9 @@ const Items = ({ item }) => {
           x{item.selected}
         </div>
         <div>
-          {item.total}
+          {item.subtotal}
         </div>
 
       </div>
     </>)
 }
-
-
-

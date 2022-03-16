@@ -27,7 +27,7 @@ export default function ItemDetails({ product }) {
           <div>
             <h2>ERROR 404</h2></div>
           <div> 
-            <p>Product not found</p>
+            <p>Producto no encontrado</p>
           </div>
         </div>
       )}
@@ -59,7 +59,7 @@ const CountItem = ({ product, addItem }) => {
         price: parseFloat(product.price),
         stock: product.stock,
         selected: 1,
-        total: parseFloat(product.price),
+        subtotal: parseFloat(product.price),
       }
     })
   };

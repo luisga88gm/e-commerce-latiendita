@@ -25,11 +25,11 @@ export default function ShoppingContainer() {
   return (
     <div className={Styles.container__cart__shopping}>
       <div className={Styles.container__cart__header}>
-        <h2>Products: {countBuys}</h2>
+        <h2>Productos: {countBuys}</h2>
         {items.length > 0 && (
           <Link to={`/checkout`}>
             <div className={Styles.finish__buy__button}>
-              <button onClick={finishBuy}>Finish buying</button>
+              <button onClick={finishBuy}>Finalizar Compra!</button>
             </div>
           </Link>
         )}
@@ -41,7 +41,7 @@ export default function ShoppingContainer() {
             {items.length === 0 && (
 
               <div className={Styles.cart__empty}>
-                <span>Empty cart :</span>
+                <span>CARRITO VACIO! :</span>
               </div>
 
             )}
@@ -70,7 +70,7 @@ export default function ShoppingContainer() {
 }
 const ItemsCart = ({ item, addStockItem, subtractStockItem, removeItem }) => {
   const [stockSelected, setStockSelected] = useState(item.selected);
-  const [total, setTotal] = useState(item.total);
+  const [total, setTotal] = useState(item.subtotal);
   const deleteItem = () => {
     removeItem(item);
   }
@@ -80,7 +80,7 @@ const ItemsCart = ({ item, addStockItem, subtractStockItem, removeItem }) => {
     if (item.selected < item.stock) {
       const itemModify = addStockItem(item);
       setStockSelected(itemModify.selected);
-      setTotal(itemModify.total)
+      setTotal(itemModify.subtotal)
     }
 
   };
@@ -89,8 +89,9 @@ const ItemsCart = ({ item, addStockItem, subtractStockItem, removeItem }) => {
     e.preventDefault();
     if (item.selected > 1) {
       const itemModify = subtractStockItem(item)
+      console.log(itemModify)
       setStockSelected(itemModify.selected);
-      setTotal(itemModify.total)
+      setTotal(itemModify.subtotal)
     }
   };
   return (
@@ -101,7 +102,7 @@ const ItemsCart = ({ item, addStockItem, subtractStockItem, removeItem }) => {
       </div>
       <div className={Styles.cart__item__description}>
         <div>
-          <h3>Product:{item.product}</h3>
+          <h3>{item.product}</h3>
         </div>
         <div className={Styles.item__buttons}>
           <button onClick={subtractStock}>-</button>
@@ -116,7 +117,7 @@ const ItemsCart = ({ item, addStockItem, subtractStockItem, removeItem }) => {
         <span className={Styles.item__price}>${total.toFixed(3)}</span>
       </div>
       <div className={Styles.button__delete}>
-        <button onClick={deleteItem}>Delete</button>
+        <button onClick={deleteItem}>QUITAR</button>
       </div>
     </div>
   )

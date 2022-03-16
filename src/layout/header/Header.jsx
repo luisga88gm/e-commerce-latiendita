@@ -21,7 +21,7 @@ export default function ConteinerHeader() {
             </div>
             <div className={Styles.conteiner__header__second}>
                 <div className={Styles.item__1}>
-                    <p>#Futuro logo</p>
+                    <p>todo lo que buscás, está acá!</p>
                 </div>
                 <NavbarMenu setCategoryMenu={setCategoryMenu}/>
                 <NavBarUser 
@@ -56,7 +56,7 @@ const TitleHeader = ()=>{
 const Search = ()=>{
     return (
         <div className={Styles.search}>
-            <input type="text" placeholder='Search'/>
+            <input type="text" placeholder='Buscar'/>
             <button className={Styles.button__search}><FontAwesomeIcon icon={faSearch} className={Styles.icon__search}/></button>
         </div>
 
@@ -145,20 +145,20 @@ const NavBarCategories = ({setCategoryMenu})=>{
                     <button onClick={hidden_menu}><FontAwesomeIcon icon={faTimesCircle}/></button>
                 </div>
                 <div className={Styles.title__navbar__categories}>
-                    <h2>Categorías</h2>
+                    <h2>CATEGORÍAS</h2>
                 </div>
                 <ul>
                     <li>
-                        <NavLink onClick={hidden_menu} to="category/computers">Computers</NavLink>
+                        <NavLink onClick={hidden_menu} to="category/computers">Computadoras</NavLink>
                     </li>
                     <li>
-                        <NavLink onClick={hidden_menu} to="category/cell-phones">Cell Phones</NavLink>
+                        <NavLink onClick={hidden_menu} to="category/cell-phones">Celulares</NavLink>
                     </li>
                     <li>
                         <NavLink onClick={hidden_menu} to="category/tablets">Tablets</NavLink>
                     </li>
                     <li>
-                        <NavLink onClick={hidden_menu} to="category/tvs">Tvs</NavLink>
+                        <NavLink onClick={hidden_menu} to="category/tvs">Tv´s</NavLink>
                     </li>
                 </ul>
             </div>

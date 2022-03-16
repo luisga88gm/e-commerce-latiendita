@@ -1,18 +1,15 @@
-import { React, useContext,useEffect} from 'react'
+import { React} from 'react'
 import { BrowserRouter,Route,Routes as Switch} from 'react-router-dom';
 import ItemDetailsContainer from '../view/ItemDetails/ItemDetailsContainer';
-import ItemListContainer from '../view/ItemList/ItemListContainer';
+import ItemListConteiner from '../view/ItemList/ItemListContainer';
 import Header from '../layout/header/Header';
 import Footer from '../layout/footer/Footer';
 import ShoppingContainer from '../view/shopping/ShoppingContainer';
 import ItemCheckout from '../view/ItemCheckout/ItemCheckout';
-import { CartContext } from '../context/CartContext';
 
 export default function Routes() {
-    const {getItems} = useContext(CartContext);
-    useEffect(() => {
-        getItems();
-    }, []);
+    //const {getItems} = useContext(CartContext);
+
     
   return (
 
@@ -22,10 +19,10 @@ export default function Routes() {
             
                 <Route path='/' element = {
               
-                    <ItemListContainer/>
+                    <ItemListConteiner/>
                 }/>
                 <Route path='/home' element = {
-                    <ItemListContainer/>
+                    <ItemListConteiner/>
                 }/>
                     {/* Navbar*/}
 {/*                 <Route path='/offers' element = {<p></p>}/>
@@ -34,7 +31,7 @@ export default function Routes() {
                     {/* Categories */}
 
                 <Route path='/category/:category' element = {                    
-                    <ItemListContainer/>}
+                    <ItemListConteiner/>}
                 />
                     {/* Item id */}
 

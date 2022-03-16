@@ -1,10 +1,14 @@
-import { React, createContext, useState } from 'react'
+import { React, createContext, useState,useEffect } from 'react'
 
 export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
     const [items, setItems] = useState([]);
     const [countBuys, setCountBuys] = useState(0);
+
+    useEffect(() => {
+        getItems();
+    }, []);
 
     const getItems = () => {
         if (localStorage.getItem('items')) {
@@ -30,21 +34,21 @@ export const CartProvider = ({ children }) => {
 
     const addStockItem = (item) => {
         item.selected = item.selected + 1
-        item.total = item.price * item.selected;
+        item.subtotal = item.price * item.selected;
         localStorage.setItem('items', JSON.stringify([...items]));
         return item;
     }
 
     const subtractStockItem = (item) => {
         item.selected = item.selected - 1;
-        item.total = item.price * (item.selected);
+        item.subtotal = item.price * (item.selected);
         localStorage.setItem('items', JSON.stringify([...items]));
         return item;
     }
 
     const calculateTotal = () => {
         let total = 0
-        items.map(({ item }) => total += item.total)
+        items.map(({ item }) => total += item.subtotal)
         return total;
     }
 
@@ -68,7 +72,7 @@ export const CartProvider = ({ children }) => {
 
     return (
         <CartContext.Provider
-            value={{ items, getItems, setItems, addStockItem,subtractStockItem, calculateTotal, finishedBuy, countBuys, addItem, removeItem, clearListItem }}
+            value={{ items, setItems, addStockItem,subtractStockItem, calculateTotal, finishedBuy, countBuys, addItem, removeItem, clearListItem }}
         >
             {children}
         </CartContext.Provider>
